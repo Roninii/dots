@@ -1,0 +1,57 @@
+{ 
+  ;; Add MacBook Pro built-in keyboard to device list to use as a condition.
+  ;; This is because when I'm at my desk, I use my Voyager and don't want this to conflict with that keymap.
+  :devices {:mbp [{:vendor_id 1452 :product_id 834 }]}
+  ;; Change the behavior of the caps lock key to be backspace on tap, and layer toggle on hold
+  :layers {:extend {:key :caps_lock :alone {:key :delete_or_backspace}}}
+  :main [ 
+   ;; define extend layer
+   {:des "Extend layer"
+      :rules [
+         :extend
+         ;; Arrow keys in extend layer
+         [:##j :left_arrow [:mbp]]
+         [:##k :down_arrow [:mbp]]
+         [:##l :up_arrow [:mbp]]
+         [:##semicolon :right_arrow [:mbp]]
+      ]
+    }
+    ;; Canary Ortho Layout. Using ortho so as not to confuse myself when moving back and forth between keyboards
+    {:des "Canary Ortho"
+      :rules [
+        :mbp
+        [:##q :w]
+        [:##w :l]
+        [:##e :y]
+        [:##r :p]
+        [:##t :b]
+        [:##y :z]
+        [:##u :f]
+        [:##i :o]
+        [:##o :u]
+        [:##p :quote]
+        [:##a :c]
+        [:##s :r]
+        [:##d :s]
+        [:##f :t]
+        [:##g :g]
+        [:##h :m]
+        [:##j :n]
+        [:##k :e]
+        [:##l :i]
+        [:##semicolon :a]
+        [:##quote :semicolon]
+        [:##z :q]
+        [:##x :j]
+        [:##c :v]
+        [:##v :d]
+        [:##b :k]
+        [:##n :x]
+        [:##m :h]
+        [:##comma :slash]
+        [:##period :comma]
+        [:##slash :period]
+      ]
+    }
+  ]
+}
