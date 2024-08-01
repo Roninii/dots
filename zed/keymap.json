@@ -1,0 +1,19 @@
+[
+  {
+    "context": "Editor && (vim_mode == normal) && !VimWaiting && !menu",
+    "bindings": {
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      // Opens the task window, searches for lazygit and runs it.
+      "space g g": [
+        "workspace::SendKeystrokes",
+        "alt-shift-t l a z y g i t enter"
+      ]
+    }
+  }
+]
