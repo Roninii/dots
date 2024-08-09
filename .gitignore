@@ -10,3 +10,10 @@ op
 sanity
 yarn/global
 raycast
+karabiner.backup.edn
+Lumina/.sentry-database
+Lumina
+zed/embeddings
+zed/prompts
+zed/.tmp*
+.DS_Store
