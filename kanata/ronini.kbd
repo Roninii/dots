@@ -8,10 +8,10 @@
 
 (deflayer canary
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  w    l    y    p    b    z    f    o    u    '    [    ]    \
-  @cap @c   @r   @s   @t   g    m    @n   @e   @i   @a   ; ret
-  lsft q    j    v    d    k    x    h    /    ,    .    rsft
-  lctl lalt lmet           spc                 rmet ralt
+  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
+  @cap @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
+  lsft q    j    v    d    k    •    x    h    /    ,   .
+  lctl lalt @ext           spc                 @sym ralt
 )
 
 ;; This layer is just a default QWERTY layer so that if the wife or kids need to use
@@ -26,7 +26,9 @@
 
 (defalias
   ;; tap: backtick (grave), hold: toggle layer-switching layer while held
-  grl (tap-hold 200 200 grv (layer-toggle layers))
+  grl (tap-hold 200 200 grv (layer-toggle extend))
+  ext (layer-while-held extend)
+  sym (layer-while-held sym)
 
   ;; layer-switch changes the base layer.
   can (layer-switch canary)
@@ -42,11 +44,11 @@
   pst M-v
 )
 
-(deflayer layers
+(deflayer extend
   _    @qwr @can lrld _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    left down up   right _
+  _    @und @cut @cpy @pst _    _    _    _    _    _    _
   _    _    _              _              _    _
 )
 
@@ -68,9 +70,9 @@
 )
 (deflayer nomods
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  w    l    y    p    b    z    f    o    u    '    [    ]    \
-  @cap c    r    s    t    g    m    n    e    i    a    ;    _
-  lsft q    j    v    d    k    x    h    /    ,    .    rsft
+  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
+  @cap c    r    s    t    g    ]    m    n    e    i    a    _
+  lsft q    j    v    d    k    •    x    h    /    ,   .
   _    _    _              _              _    _
 )
 (deffakekeys
@@ -90,4 +92,34 @@
     e (tap-hold-release-keys $tap-time $hold-time (multi e @tap) rctl $right-hand-keys)
     i (tap-hold-release-keys $tap-time $hold-time (multi i @tap) ralt $right-hand-keys)
     a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) rmet $right-hand-keys)
+)
+
+(defalias
+  => (macro = S-.)
+  !== (macro S-1 = =)
+  : S-;
+  + S-=
+  ! S-1
+  & S-7
+  # S-3
+  $ S-4
+  * S-8
+  ` grv
+  ~ S-grv
+  % S-5
+  | S-\
+  @ S-2
+  lwd S-min
+  opn S-9
+  cpn S-0
+  ^ S-6
+  { S-[
+  } S-]
+)
+(deflayer sym
+   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+   _    +    ;    @:    @!    @&    _    @#    @=>   @!==  min  @$    _    _
+   _    @*    [    @{    @opn    eql    _    @^    _    _    _    _    _
+   _    @%    ]    @}    @cpn    @|    _    \    `    @~    @lwd    @@
+   _    _    _              _              _    _
 )
