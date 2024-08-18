@@ -3,23 +3,25 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  lctl lalt lmet           spc            rmet ralt
 )
 
 (deflayer canary
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
-  @cap c    r    s    t    g    ]    m    n    e    i    a    ret
-  lsft q    j    v    d    k    .    x    h    /    ,    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  tab  w    l    y    p    b    z    f    o    u    '    [    ]    \
+  @cap @c   @r   @s   @t   g    m    @n   @e   @i   @a   ; ret
+  lsft q    j    v    d    k    x    h    /    ,    .    rsft
+  lctl lalt lmet           spc                 rmet ralt
 )
 
+;; This layer is just a default QWERTY layer so that if the wife or kids need to use
+;; my laptop, everything works as expected
 (deflayer qwerty
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet rctl
+  lctl lalt lmet           spc            rmet ralt
 )
 
 (defalias
@@ -32,6 +34,12 @@
 
   ;; tap for capslk, hold for lctl
   cap (tap-hold 200 200 caps lctl)
+
+  ;; clipboard shortcuts
+  und M-z
+  cut M-x
+  cpy M-c
+  pst M-v
 )
 
 (deflayer layers
@@ -39,5 +47,47 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _
+  _    _    _              _              _    _
+)
+
+;; home row mods
+(defvar
+    tap-time 200
+    hold-time 150
+
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
+)
+(deflayer nomods
+  @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  w    l    y    p    b    z    f    o    u    '    [    ]    \
+  @cap c    r    s    t    g    m    n    e    i    a    ;    _
+  lsft q    j    v    d    k    x    h    /    ,    .    rsft
+  _    _    _              _              _    _
+)
+(deffakekeys
+    to-base (layer-switch canary)
+)
+(defalias
+    tap (multi
+        (layer-switch nomods)
+        (on-idle-fakekey to-base tap 20)
+    )
+
+    c (tap-hold-release-keys $tap-time $hold-time (multi c @tap) lmet $left-hand-keys)
+    r (tap-hold-release-keys $tap-time $hold-time (multi r @tap) lalt $left-hand-keys)
+    s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lctl $left-hand-keys)
+    t (tap-hold-release-keys $tap-time $hold-time (multi t @tap) lsft $left-hand-keys)
+    n (tap-hold-release-keys $tap-time $hold-time (multi n @tap) rsft $right-hand-keys)
+    e (tap-hold-release-keys $tap-time $hold-time (multi e @tap) rctl $right-hand-keys)
+    i (tap-hold-release-keys $tap-time $hold-time (multi i @tap) ralt $right-hand-keys)
+    a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) rmet $right-hand-keys)
 )
