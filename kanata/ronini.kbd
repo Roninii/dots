@@ -89,8 +89,8 @@
 (deflayer extend
   _    @qwr @can lrld _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    left down up   right _
-  _    @und @cut @cpy @pst _    _    _    bspc    _    _    _
+  _    _    _    _    _    _    _    _    ◀    ▼    ▲    ▶    _
+  _    @und @cut @cpy @pst _    _    _    ⌫    _    _    _
   _    _    _              _              _    _
 )
 
