@@ -1,32 +1,4 @@
-(defsrc
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lalt lmet           spc            rmet ralt
-)
-
-(deflayer canary
-  @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
-  @cap @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
-  lsft q    j    v    d    k    •    x    h    /    ,   .
-  lctl lalt @ext           spc                 @sym ralt
-)
-
-;; This layer is just a default QWERTY layer so that if the wife or kids need to use
-;; my laptop, everything works as expected
-(deflayer qwerty
-  @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lalt lmet           spc            rmet ralt
-)
-
 (defalias
-  ;; tap: backtick (grave), hold: toggle layer-switching layer while held
-  grl (tap-hold 200 200 grv (layer-toggle extend))
   ext (layer-while-held extend)
   sym (layer-while-held sym)
 
@@ -34,29 +6,19 @@
   can (layer-switch canary)
   qwr (layer-switch qwerty)
 
-  ;; tap for capslk, hold for lctl
-  cap (tap-hold 200 200 caps lctl)
-
-  ;; clipboard shortcuts
+  ;; Clipboard Shortcuts
   und M-z
   cut M-x
   cpy M-c
   pst M-v
 )
 
-(deflayer extend
-  _    @qwr @can lrld _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    left down up   right _
-  _    @und @cut @cpy @pst _    _    _    _    _    _    _
-  _    _    _              _              _    _
-)
-
-;; home row mods
+;; Home Row Mods Setup
 (defvar
     tap-time 200
     hold-time 150
 
+  ;; Worth noting that 
   left-hand-keys (
     q w e r t
     a s d f g
@@ -67,13 +29,6 @@
     h j k l ;
     n m , . /
   )
-)
-(deflayer nomods
-  @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
-  @cap c    r    s    t    g    ]    m    n    e    i    a    _
-  lsft q    j    v    d    k    •    x    h    /    ,   .
-  _    _    _              _              _    _
 )
 (deffakekeys
     to-base (layer-switch canary)
@@ -94,32 +49,75 @@
     a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) rmet $right-hand-keys)
 )
 
+;; Sym layer aliases
 (defalias
   => (macro = S-.)
   !== (macro S-1 = =)
   : S-;
-  + S-=
   ! S-1
-  & S-7
+  @ S-2
   # S-3
   $ S-4
-  * S-8
-  ` grv
-  ~ S-grv
   % S-5
-  | S-\
-  @ S-2
-  lwd S-min
+  ^ S-6
+  & S-7
+  * S-8
   opn S-9
   cpn S-0
-  ^ S-6
+  | S-\
+  _ S-min
   { S-[
   } S-]
 )
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lalt lmet           spc            rmet ralt
+)
+
+(deflayer canary
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
+  esc @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
+  lsft q    j    v    d    k    •    x    h    /    ,   .
+  lctl lalt @ext           spc                 @sym ralt
+)
+
+(deflayer extend
+  _    @qwr @can lrld _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    left down up   right _
+  _    @und @cut @cpy @pst _    _    _    bspc    _    _    _
+  _    _    _              _              _    _
+)
+
+
+(deflayer nomods
+  grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
+  esc c    r    s    t    g    ]    m    n    e    i    a    _
+  lsft q    j    v    d    k    •    x    h    /    ,   .
+  _    _    _              _              _    _
+)
+
+;; This layer is just a default QWERTY layer so that if the wife or kids need to use
+;; my laptop, everything works as expected
+(deflayer qwerty
+  grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lalt lmet           spc            rmet ralt
+)
+
+
 (deflayer sym
    _    _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    +    ;    @:    @!    @&    _    @#    @=>   @!==  min  @$    _    _
-   _    @*    [    @{    @opn    eql    _    @^    _    _    _    _    _
-   _    @%    ]    @}    @cpn    @|    _    \    `    @~    @lwd    @@
+   _    +    ;    @:   @!   @&   _    @#   @=>  @!== min  @$   _    _
+   _    @*   [    @{   @opn  eql  _    @^   _    _    _    _    _
+   _    @%   ]    @}   @cpn  @|   _    \    `    ˜   @_ @@
    _    _    _              _              _    _
 )
