@@ -103,6 +103,14 @@
   _    _    _              _             _    _
 )
 
+(deflayer sym
+   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+   _    +    ;    @:   @!   @&   _    @#   @=>  @!== min  @$   _    _
+   _    @*   [    @{   @opn  eql  _    @^   _    _    _    _    _
+   _    @%   ]    @}   @cpn  @|   _    \    `    ˜   @_ @@
+   _    _    _              _              _    _
+)
+
 ;; This layer is just a default QWERTY layer so that if the wife or kids need to use
 ;; my laptop, everything works as expected
 (deflayer qwerty
@@ -114,10 +122,3 @@
 )
 
 
-(deflayer sym
-   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    +    ;    @:   @!   @&   _    @#   @=>  @!== min  @$   _    _
-   _    @*   [    @{   @opn  eql  _    @^   _    _    _    _    _
-   _    @%   ]    @}   @cpn  @|   _    \    `    ˜   @_ @@
-   _    _    _              _              _    _
-)
