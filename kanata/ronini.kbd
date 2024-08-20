@@ -1,6 +1,7 @@
 (defalias
   ext (layer-while-held extend)
   sym (layer-while-held sym)
+  grl (tap-hold 200 200 grv @ext)
 
   ;; layer-switch changes the base layer.
   can (layer-switch canary)
@@ -81,7 +82,7 @@
 (deflayer canary
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
-  esc @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
+  esc  @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
   lsft q    j    v    d    k    •    x    h    /    ,   .
   lctl lalt @ext           spc                 @sym ralt
 )
@@ -114,7 +115,7 @@
 ;; This layer is just a default QWERTY layer so that if the wife or kids need to use
 ;; my laptop, everything works as expected
 (deflayer qwerty
-  grv 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
