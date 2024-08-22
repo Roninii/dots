@@ -21,6 +21,16 @@
          [:##semicolon :right_arrow [:mbp]]
       ]
     }
+   {:des "Ctrl as Cmd"
+      :rules [
+              :voyager
+              ;; Swap ctrl and space when using Voyager keyboard
+              [:##left_control :left_command]
+              [:##left_command :left_control]
+              [:##right_control :right_command]
+              [:##right_command :right_control]
+      ]
+   }
     ;; Canary Ortho Layout. Using ortho so as not to confuse myself when moving back and forth between keyboards
     {:des "Canary Ortho"
       :rules [

@@ -17,4 +17,3 @@ zed/embeddings
 zed/prompts
 zed/.tmp*
 .DS_Store
-htop
