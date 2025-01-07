@@ -13,6 +13,8 @@ return {
 
       require('mini.animate').setup()
 
+      require('mini.git').setup()
+
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
