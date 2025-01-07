@@ -87,7 +87,7 @@ return {
           MiniFiles.open()
         end
       end
-      vim.keymap.set('n', '<leader>b', minifiles_toggle, { desc = '[F]ile utils [T]oggle' })
+      vim.keymap.set('n', '<leader>b', minifiles_toggle, { desc = 'File Tree' })
 
       local miniclue = require 'mini.clue'
       miniclue.setup {
@@ -140,6 +140,8 @@ return {
           miniclue.gen_clues.z(),
         },
       }
+
+      require('mini.pairs').setup()
     end,
   },
 }
