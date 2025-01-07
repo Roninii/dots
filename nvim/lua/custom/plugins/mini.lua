@@ -89,6 +89,7 @@ return {
       end
       vim.keymap.set('n', '<leader>b', minifiles_toggle, { desc = 'File Tree' })
 
+      -- Show keybindings on the fly
       local miniclue = require 'mini.clue'
       miniclue.setup {
         window = {
@@ -141,6 +142,7 @@ return {
         },
       }
 
+      -- Pair matching
       require('mini.pairs').setup()
     end,
   },
