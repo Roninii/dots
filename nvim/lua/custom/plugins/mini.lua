@@ -75,11 +75,9 @@ return {
 
       -- File utils
       require('mini.files').setup {
-        mappings = {
-          go_in = '<Right>',
-          go_in_plus = '<S-Right>',
-          go_out = '<Left>',
-          go_out_plus = '<S-Left>',
+        windows = {
+          preview = true,
+          width_preview = 100,
         },
       }
       local minifiles_toggle = function()
@@ -87,7 +85,7 @@ return {
           MiniFiles.open()
         end
       end
-      vim.keymap.set('n', '<leader>b', minifiles_toggle, { desc = 'File Tree' })
+      vim.keymap.set('n', '<leader>ft', minifiles_toggle, { desc = '[F]ile [T]ree' })
 
       -- Show keybindings on the fly
       local miniclue = require 'mini.clue'
