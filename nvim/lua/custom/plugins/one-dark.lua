@@ -1,5 +1,5 @@
 return {
-  enabled = true,
+  enabled = false,
   'navarasu/onedark.nvim',
   lazy = false,
   priority = 1000,

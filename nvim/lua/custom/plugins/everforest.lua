@@ -1,6 +1,6 @@
 return {
   {
-    enabled = false,
+    enabled = true,
     'sainnhe/everforest',
     lazy = false,
     priority = 1000,
