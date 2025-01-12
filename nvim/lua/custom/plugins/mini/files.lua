@@ -6,6 +6,9 @@ return {
       preview = true,
       width_preview = 100,
     },
+    options = {
+      permanent_delete = false,
+    },
   },
   init = function()
     -- Add a function and keymap for toggling the file tree
