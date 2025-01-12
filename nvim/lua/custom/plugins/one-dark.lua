@@ -1,10 +1,10 @@
 return {
-  enabled = true,
+  enabled = false,
   'navarasu/onedark.nvim',
   lazy = false,
   priority = 1000,
   opts = {
-    style = 'darker',
+    style = 'dark',
 
     code_style = {
       comments = 'italic',
