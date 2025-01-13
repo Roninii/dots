@@ -20,7 +20,7 @@ return {
       },
       highlight_groups = {
         Comment = { italic = true },
-        Keyword = { italic = true },
+        ['@type'] = { italic = true },
       },
     },
     init = function()
