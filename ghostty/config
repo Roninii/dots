@@ -1,0 +1,8 @@
+# theme = everforest dark - hard
+font-family = MonoLisa Custom
+font-size = 14
+cursor-click-to-move = true
+cursor-style = block
+shell-integration-features = no-cursor
+# cursor-color = #31748f
+# cursor-color = #9ccfd8
