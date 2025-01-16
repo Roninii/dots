@@ -50,12 +50,19 @@ return {
       end,
     })
 
-    -- Add a function and keymap for toggling the file tree
+    -- Add a functions and keymaps for toggling the file tree
+    local minifiles_toggle_root = function()
+      if not MiniFiles.close() then
+        MiniFiles.open()
+      end
+    end
+
     local minifiles_toggle = function()
       if not MiniFiles.close() then
         MiniFiles.open(vim.api.nvim_buf_get_name(0))
       end
     end
-    vim.keymap.set('n', '-', minifiles_toggle, { desc = 'Reveal current file in Mini.Files' })
+    vim.keymap.set('n', '<Leader>b', minifiles_toggle_root, { desc = '[B]rowse files' })
+    vim.keymap.set('n', '-', minifiles_toggle, { desc = 'Show current file in file tree' })
   end,
 }
