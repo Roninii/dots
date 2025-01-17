@@ -1,19 +1,29 @@
 [
   {
-    "context": "Editor && (vim_mode == normal) && !VimWaiting && !menu",
+    "context": "VimControl && !menu && vim_mode != operator",
     "bindings": {
-      "shift-h": "pane::ActivatePrevItem",
-      "shift-l": "pane::ActivateNextItem"
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd",
+      "space z": "workspace::ToggleCenteredLayout",
+      "space s f": "file_finder::Toggle",
+      "-": "workspace::ToggleLeftDock"
     }
   },
   {
-    "context": "Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "context": "Editor && showing_completions",
     "bindings": {
-      // Opens the task window, searches for lazygit and runs it.
-      "space g g": [
-        "workspace::SendKeystrokes",
-        "alt-shift-t l a z y g i t enter"
-      ]
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
+  },
+  {
+    "context": "(FileFinder && !menu_open)",
+    "bindings": {
+      "ctrl-h": "pane::SplitLeft",
+      "ctrl-j": "pane::SplitDown",
+      "ctrl-k": "pane::SplitUp",
+      "ctrl-v": "pane::SplitRight"
     }
   }
 ]

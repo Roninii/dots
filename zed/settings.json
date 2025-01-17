@@ -1,32 +1,16 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },
-  "theme": "Rosé Pine",
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "buffer_font_family": "MonoLisa Custom",
-  "terminal": {
-    "font_size": 14,
-    "font_family": "Zed Mono"
-  },
-  "ui_font_family": "Zed Sans",
-  "telemetry": {
-    "diagnostics": true,
-    "metrics": true
-  },
+  "theme": "One Dark",
+  "ui_font_size": 14,
+  "ui_font_family": "Zed Plex Sans",
+  "buffer_font_size": 15,
+  "buffer_font_family": "Zed Plex Mono",
   "show_whitespaces": "all",
   "inlay_hints": {
     "enabled": true
@@ -34,14 +18,36 @@
   "preview_tabs": {
     "enabled": true
   },
-  // Vim Mode Settings
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "git": {
+    "inline_blame": {
+      "delay_ms": 500,
+      "show_commit_summary": true
+    }
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "button": false,
+    "line_height": "standard"
+  },
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always",
-    "use_smartcase_find": true
+    "use_smartcase_find": true,
+    "use_multiline_find": true
   },
   "relative_line_numbers": true,
   "scrollbar": {
     "show": "never"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
   }
 }
