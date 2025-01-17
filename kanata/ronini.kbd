@@ -88,9 +88,9 @@
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
    _    _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    S-6  ;    S-;  S-1  S-7  _    S-3  grv  S-eql min  S-2  _    _
-   _    S-8  [    S-[  S-9  eql  _    S-4  rsft rctrl ralt rmet _
-   _    S-5  ]    S-]  S-0  S-\  _    S-grv S-min \    _    _
+   _    S-6  ;    S-;  S-1  S-7  _    S-3  grv  min   S-eql S-2  _    _
+   _    S-8  [    S-[  S-9  eql  _    S-4  rsft rctrl ralt  rmet _
+   _    S-5  ]    S-]  S-0  S-\  _    S-grv S-min \   _    _
    _    _    _              _              _    _
 )
 
