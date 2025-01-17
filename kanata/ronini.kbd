@@ -52,7 +52,13 @@
   } S-]
 )
 
+(defcfg concurrent-tap-hold yes)
+(defchordsv2-experimental
+  (w e)    tab                200 all-released  (qwerty)
+)
+
 (defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
@@ -61,6 +67,7 @@
 )
 
 (deflayer canary
+  esc  🔅   🔆    ✗    ✗    ✗    ✗    ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
   esc  @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
@@ -69,37 +76,39 @@
 )
 
 (deflayer extend
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    @qwr @can lrld _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    ◀    ▼    ▲    ▶    _
+  _   ‹⌘  ‹⌥   ‹⎈  ‹⇧   _    _    _    ◀    ▼    ▲    ▶    _
   _    @und @cut @cpy @pst _    _    _    ⌫    _    _    _
   _    _    _              _              _    _
 )
 
 
-(deflayer nomods
-  `   1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab w    l    y    p    b    [    z    f    o    u    '    ;    \
-  esc c    r    s    t    g    ]    m    n    e    i    a    _
-  ‹⇧  q    j    v    d    k    •    x    h    /    ,    .
-  _    _    _              _             _    _
-)
-
 (deflayer sym
+  _    _    _    _    _    _    _    _    _    _    _    _    _
    _    _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    +    ;    @:   @!   @&   _    @#   @=>  @!== min  @$   _    _
-   _    @*   [    @{   @opn  eql  _    @^   _    _    _    _    _
-   _    @%   ]    @}   @cpn  @|   _    \    `    ˜   @_ @@
+   _    S-6  ;    S-;  S-1  S-7  _    S-3  grv  S-eql min  S-2  _    _
+   _    S-8  [    S-[  S-9  eql  _    S-4  rsft rctrl ralt rmet _
+   _    S-5  ]    S-]  S-0  S-\  _    S-grv S-min \    _    _
    _    _    _              _              _    _
 )
+;;(deflayer sym
+;;  _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    +    ;    @:   @!   @&   _    @#   @=>  @!== min  @$   _    _
+;;   _    @*   [    @{   @opn  eql  _    @^   _    _    _    _    _
+;;   _    @%   ]    @}   @cpn  @|   _    \    `    ˜   @_ @@
+;;   _    _    _              _              _    _
+;;)
 
 ;; This layer is just a default QWERTY layer so that if the wife or kids need to use
 ;; my laptop, everything works as expected
 (deflayer qwerty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lalt lmet           spc            rmet ralt
 )
-
