@@ -1,6 +1,7 @@
 return {
   'olimorris/codecompanion.nvim',
   dependencies = {
+
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',
   },
@@ -15,6 +16,41 @@ return {
       action_palette = {
         provider = 'telescope',
       },
+      chat = {
+        slash_commands = {
+          ['file'] = {
+            callback = 'strategies.chat.slash_commands.file',
+            description = 'Select a file using Telescope',
+            opts = {
+              provider = 'telescope',
+              contains_code = true,
+            },
+          },
+        },
+        intro_message = 'Welcom back, Ronini! (press ? for options)',
+        show_header_separator = true,
+        show_settings = false, -- show LLM settings at the top of the chat buffer
+        show_token_count = false,
+      },
+      window = {
+        opts = {
+          cursorline = true,
+        },
+      },
+      diff = {
+        provider = 'mini_dif',
+      },
+    },
+    adapters = {
+      copilot = function()
+        return require('codecompanion.adapters').extend('copilot', {
+          schema = {
+            model = {
+              default = 'claude-3.5-sonnet',
+            },
+          },
+        })
+      end,
     },
   },
   init = function()
