@@ -1,6 +1,7 @@
 (defalias
   ext (layer-while-held extend)
   sym (layer-while-held sym)
+  hesc (layer-while-held hyper)
   grl (tap-hold 200 200 grv @ext)
 
   ;; layer-switch changes the base layer.
@@ -31,27 +32,7 @@
     a (tap-hold $tap-time $hold-time a rmet)
 )
 
-;; Sym layer aliases
-(defalias
-  => (macro = S-.)
-  !== (macro S-1 = =)
-  : S-;
-  ! S-1
-  @ S-2
-  # S-3
-  $ S-4
-  % S-5
-  ^ S-6
-  & S-7
-  * S-8
-  opn S-9
-  cpn S-0
-  | S-\
-  _ S-min
-  { S-[
-  } S-]
-)
-
+;; Combos
 (defcfg concurrent-tap-hold yes)
 (defchordsv2-experimental
   (w e)    tab                200 all-released  (qwerty)
@@ -70,9 +51,18 @@
   esc  🔅   🔆    ✗    ✗    ✗    ✗    ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
-  esc  @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
+  @hesc  @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
   lsft q    j    v    d    k    •    x    h    /    ,   .
   lctl lalt @ext           spc                 @sym ralt
+)
+
+(deflayer hyper
+    esc  🔅   🔆    ✗    ✗    ✗    ✗    ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
+    M-A-C-S-grv  M-A-C-S-1  M-A-C-S-2  M-A-C-S-3  M-A-C-S-4  M-A-C-S-5  M-A-C-S-6  M-A-C-S-7  M-A-C-S-8  M-A-C-S-9  M-A-C-S-0  M-A-C-S-min  M-A-C-S-eql  M-A-C-S-bspc
+    M-A-C-S-tab  M-A-C-S-w  M-A-C-S-l  M-A-C-S-y  M-A-C-S-p  M-A-C-S-b  [    M-A-C-S-z  M-A-C-S-f  M-A-C-S-o  M-A-C-S-u  '    ;    \
+    M-A-C-S-esc  M-A-C-S-c  M-A-C-S-r  M-A-C-S-s  M-A-C-S-t  M-A-C-S-g  ]    M-A-C-S-m  M-A-C-S-n  M-A-C-S-e  M-A-C-S-i  M-A-C-S-a  M-A-C-S-ret
+    lsft M-A-C-S-q  M-A-C-S-j  M-A-C-S-v  M-A-C-S-d  M-A-C-S-k  •    M-A-C-S-x  M-A-C-S-h  /    ,   .
+    lctl lalt @ext           spc                 @sym ralt
 )
 
 (deflayer extend
@@ -88,9 +78,9 @@
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
    _    _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    S-6  ;    S-;  S-1  S-7  _    S-3  grv  min   S-eql S-2  _    _
-   _    S-8  [    S-[  S-9  eql  _    S-4  rsft rctrl ralt  rmet _
-   _    S-5  ]    S-]  S-0  S-\  _    S-grv S-min \   _    _
+   _    S-6  ;    S-;  S-1  S-7  •    S-3  grv   min   S-eql S-2  _    _
+   _    S-8  [    S-[  S-9  eql  •    S-4  rsft  rctrl ralt  rmet _
+   _    S-5  ]    S-]  S-0  S-\  •     •   S-grv S-min \      _    
    _    _    _              _              _    _
 )
 
