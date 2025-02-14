@@ -1,7 +1,6 @@
 return {
   'olimorris/codecompanion.nvim',
   dependencies = {
-
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',
   },
@@ -27,9 +26,9 @@ return {
             },
           },
         },
-        intro_message = 'Welcom back, Ronini! (press ? for options)',
+        intro_message = 'Welcome back, Ronini! (press ? for options)',
         show_header_separator = true,
-        show_settings = false, -- show LLM settings at the top of the chat buffer
+        show_settings = true, -- show LLM settings at the top of the chat buffer
         show_token_count = false,
       },
       window = {
@@ -38,7 +37,7 @@ return {
         },
       },
       diff = {
-        provider = 'mini_dif',
+        provider = 'mini_diff',
       },
     },
     adapters = {

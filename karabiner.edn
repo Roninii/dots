@@ -6,9 +6,9 @@
             :voyager [{:vendor_id 12951 :product_id 6519}]
   }
   ;; Change the behavior of the caps lock key to be backspace on tap, and layer toggle on hold
-  :layers {
-           :extend {:key :caps_lock :alone {:key :delete_or_backspace}}
-  }
+  ; :layers {
+  ;          :extend {:key :caps_lock :alone {:key :delete_or_backspace}}
+  ; }
   :main [ 
    ;; define extend layer
    {:des "Extend layer"
@@ -21,20 +21,11 @@
          [:##semicolon :right_arrow [:mbp]]
       ]
     }
-   {:des "Ctrl as Cmd"
-      :rules [
-              :voyager
-              ;; Swap ctrl and space when using Voyager keyboard
-              [:##left_control :left_command]
-              [:##left_command :left_control]
-              [:##right_control :right_command]
-              [:##right_command :right_control]
-      ]
-   }
     ;; Canary Ortho Layout. Using ortho so as not to confuse myself when moving back and forth between keyboards
     {:des "Canary Ortho"
       :rules [
         :mbp
+        [:##caps_lock :left_control nil {:alone :escape}]
         [:##q :w]
         [:##w :l]
         [:##e :y]

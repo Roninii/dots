@@ -1,7 +1,8 @@
 (defalias
   ext (layer-while-held extend)
+  hyper (layer-while-held hyper)
   sym (layer-while-held sym)
-  hesc (layer-while-held hyper)
+  hesc (tap-hold 200 150 esc @hyper)
   grl (tap-hold 200 200 grv @ext)
 
   ;; layer-switch changes the base layer.

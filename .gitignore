@@ -20,3 +20,5 @@ zed/.tmp*
 htop
 zed/conversations
 zed/themes
+karabiner/karabiner.json
+karabiner/automatic_backups

@@ -1,13 +1,13 @@
 return {
-  enabled = false,
-  'navarasu/onedark.nvim',
+  enabled = true,
+  'olimorris/onedarkpro.nvim',
   lazy = false,
   priority = 1000,
   opts = {
-    style = 'dark',
-
-    code_style = {
+    styles = {
+      types = 'italic',
       comments = 'italic',
+      virtual_text = 'italic',
     },
   },
   init = function()

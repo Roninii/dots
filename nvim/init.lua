@@ -1,3 +1,7 @@
+-- TODO: Remove this.
+-- It's a temporary workaround for the broken :Inspect command
+vim.hl = vim.highlight
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -28,6 +32,8 @@ vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+-- Global status line
+vim.opt.laststatus = 3
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -63,7 +69,6 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
@@ -76,11 +81,11 @@ vim.opt.scrolloff = 10
 -- Disable line wrapping
 vim.opt.wrap = false
 
+-- Hides the cmd bar when not in use
+vim.opt.cmdheight = 0
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
-
--- Make it easier to get back to netrw
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -437,6 +442,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         go = { 'goimports' },
         javascript = { { 'prettierd', 'prettier' } },
+        terraform = { 'terraform_fmt' },
         typescript = { { 'eslint_d', 'prettierd', 'prettier' } },
         vue = { { 'eslint_d', 'prettierd', 'prettier' } },
       },
@@ -612,13 +618,9 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
 
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
   { import = 'custom.plugins.mini' },
+  { import = 'custom.plugins.themes' },
 }, {})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
