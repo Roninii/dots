@@ -1,5 +1,5 @@
 return {
-  enabled = true,
+  enabled = false,
   'folke/tokyonight.nvim',
   priority = 1000,
   opts = {},
