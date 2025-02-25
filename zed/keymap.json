@@ -8,11 +8,19 @@
       "g e": "vim::PreviousSubwordEnd",
       "space z": "workspace::ToggleCenteredLayout",
       "space s f": "file_finder::Toggle",
+      "space space": "tab_switcher::Toggle",
       "-": "workspace::ToggleLeftDock"
     }
   },
   {
-    "context": "Editor && showing_completions",
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert &&showing_completions",
     "bindings": {
       "ctrl-y": "editor::ConfirmCompletion"
     }
@@ -24,6 +32,21 @@
       "ctrl-j": "pane::SplitDown",
       "ctrl-k": "pane::SplitUp",
       "ctrl-v": "pane::SplitRight"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": "editor::AcceptEditPrediction",
+      "alt-tab": null,
+      "alt-l": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction_conflict",
+    "bindings": {
+      "alt-tab": null,
+      "alt-l": "editor::AcceptEditPrediction"
     }
   }
 ]

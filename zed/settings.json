@@ -1,4 +1,7 @@
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -6,11 +9,11 @@
     },
     "version": "2"
   },
-  "theme": "One Dark",
+  "theme": "Kanagawa Wave",
   "ui_font_size": 14,
   "ui_font_family": "Zed Plex Sans",
-  "buffer_font_size": 15,
-  "buffer_font_family": "Zed Plex Mono",
+  "buffer_font_size": 14,
+  "buffer_font_family": "MonoLisaCustom Nerd Font",
   "show_whitespaces": "all",
   "inlay_hints": {
     "enabled": true
@@ -19,6 +22,7 @@
     "enabled": true
   },
   "tab_bar": {
+    "show": false,
     "show_nav_history_buttons": false
   },
   "tabs": {
@@ -49,5 +53,12 @@
   "telemetry": {
     "diagnostics": false,
     "metrics": false
+  },
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
+      }
+    }
   }
 }

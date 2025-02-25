@@ -1,8 +1,7 @@
-theme = kanagawa wave
-font-family = MonoLisa Custom
+theme = tokyonight
+font-family = MonoLisaCustom Nerd Font
 font-size = 15
 cursor-click-to-move = true
 cursor-style = block
 shell-integration-features = no-cursor
-# cursor-color = #31748f
-# cursor-color = #9ccfd8
+window-padding-x = 8

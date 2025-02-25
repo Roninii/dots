@@ -2,8 +2,10 @@
   ext (layer-while-held extend)
   hyper (layer-while-held hyper)
   sym (layer-while-held sym)
+
   hesc (tap-hold 200 150 esc @hyper)
   grl (tap-hold 200 200 grv @ext)
+  espc (tap-hold 200 200 spc @ext)
 
   ;; layer-switch changes the base layer.
   can (layer-switch canary)
@@ -48,7 +50,7 @@
   tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
   @hesc  @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
   lsft q    j    v    d    k    •    x    h    /    ,   .
-  lctl lalt @ext           spc                 @sym ralt
+  lctl lalt @ext         @espc                 @sym ralt
 )
 
 (deflayer hyper
@@ -75,7 +77,7 @@
    _    _    _    _    _    _    _    _    _    _    _    _    _    _
    _    S-6  ;    S-;  S-1  S-7  •    S-3  grv   min   S-eql S-2  _    _
    _    S-8  [    S-[  S-9  eql  •    S-4  rsft  rctrl ralt  rmet _
-   _    S-5  ]    S-]  S-0  S-\  •     •   S-grv S-min \      _    
+   _    S-5  ]    S-]  S-0  S-\  •     •   S-grv S-min \      _
    _    _    _              _              _    _
 )
 
