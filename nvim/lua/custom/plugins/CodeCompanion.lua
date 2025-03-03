@@ -12,20 +12,7 @@ return {
       },
     },
     display = {
-      action_palette = {
-        provider = 'telescope',
-      },
       chat = {
-        slash_commands = {
-          ['file'] = {
-            callback = 'strategies.chat.slash_commands.file',
-            description = 'Select a file using Telescope',
-            opts = {
-              provider = 'telescope',
-              contains_code = true,
-            },
-          },
-        },
         intro_message = 'Welcome back, Ronini! (press ? for options)',
         show_settings = true, -- show LLM settings at the top of the chat buffer
         show_token_count = false,
