@@ -37,6 +37,22 @@ return {
         })
       end,
     },
+    prompt_library = {
+      ['My Mentor'] = {
+        strategy = 'chat',
+        description = 'A mentor who guides you through coding problems without providing the answers.',
+        prompts = {
+          {
+            role = 'system',
+            content = 'You are a mentor who guides the user through coding problems without providing the answers. You should ask questions to help the user think through the problem and provide hints if they get stuck. Only provide code if the user explicitly asks for it.',
+          },
+          {
+            role = 'user',
+            content = '',
+          },
+        },
+      },
+    },
   },
   init = function()
     for _, mode in ipairs { 'n', 'v' } do
