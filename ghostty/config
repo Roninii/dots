@@ -1,4 +1,4 @@
-theme = kanagawa wave
+theme = tokyonight
 font-family = MonoLisaCustom Nerd Font
 font-size = 15
 cursor-click-to-move = true
