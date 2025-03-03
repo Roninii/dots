@@ -27,7 +27,6 @@ return {
           },
         },
         intro_message = 'Welcome back, Ronini! (press ? for options)',
-        show_header_separator = true,
         show_settings = true, -- show LLM settings at the top of the chat buffer
         show_token_count = false,
       },
@@ -45,7 +44,7 @@ return {
         return require('codecompanion.adapters').extend('copilot', {
           schema = {
             model = {
-              default = 'claude-3.5-sonnet',
+              default = 'claude-3.7-sonnet',
             },
           },
         })
