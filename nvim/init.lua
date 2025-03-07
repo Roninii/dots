@@ -157,6 +157,7 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
+require('custom.inlay_hints').setup()
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
@@ -369,6 +370,9 @@ require('lazy').setup({
               completion = {
                 callSnippet = 'Replace',
               },
+              hint = {
+                enable = true,
+              },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
             },
@@ -382,6 +386,15 @@ require('lazy').setup({
               usePlaceholders = true,
               analyses = {
                 unusedParams = true,
+              },
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariabeTypes = true,
               },
             },
           },
