@@ -9,6 +9,9 @@ return {
       comments = 'italic',
       virtual_text = 'italic',
     },
+    options = {
+      transparency = true,
+    },
   },
   init = function()
     vim.cmd [[colorscheme onedark]]
