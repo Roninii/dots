@@ -1,4 +1,6 @@
-theme = tokyonight
+theme = everforest dark - hard
+background-opacity = 0.8
+background-blur = true
 font-family = MonoLisaCustom Nerd Font
 font-size = 15
 cursor-click-to-move = true
