@@ -18,3 +18,4 @@ alias kbr='sudo "/Library/Application Support/org.pqrs/Karabiner-DriverKit-Virtu
 alias kan='sudo .config/kanata/kanata --cfg .config/kanata/ronini.kbd'
 
 eval "$(zoxide init --cmd cd zsh)"
+export PATH=$PATH:$(go env GOPATH)/bin
