@@ -2,6 +2,11 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -22,7 +27,7 @@
     "enabled": true
   },
   "tab_bar": {
-    "show": false,
+    "show": true,
     "show_nav_history_buttons": false
   },
   "tabs": {
