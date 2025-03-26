@@ -386,6 +386,7 @@ require('lazy').setup({
               usePlaceholders = true,
               analyses = {
                 unusedParams = true,
+                modernize = true,
               },
               hints = {
                 assignVariableTypes = true,
@@ -394,7 +395,7 @@ require('lazy').setup({
                 constantValues = true,
                 functionTypeParameters = true,
                 parameterNames = true,
-                rangeVariabeTypes = true,
+                rangeVariableTypes = true,
               },
             },
           },
@@ -453,11 +454,29 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        go = { 'goimports' },
-        javascript = { { 'prettierd', 'prettier' } },
+        go = {
+          'goimports',
+          'gofumpt',
+          'golines',
+        },
+        javascript = {
+          stop_after_first = true,
+          'prettierd',
+          'prettier',
+        },
         terraform = { 'terraform_fmt' },
-        typescript = { { 'eslint_d', 'prettierd', 'prettier' } },
-        vue = { { 'eslint_d', 'prettierd', 'prettier' } },
+        typescript = {
+          stop_after_first = true,
+          'eslint_d',
+          'prettierd',
+          'prettier',
+        },
+        vue = {
+          stop_after_first = true,
+          'eslint_d',
+          'prettierd',
+          'prettier',
+        },
       },
     },
   },
