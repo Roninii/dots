@@ -75,8 +75,8 @@
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
    _    _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    S-6  ;    S-;  S-1  S-7  •    S-3  grv   min   S-eql S-2  _    _
-   _    S-8  [    S-[  S-9  eql  •    S-4  rsft  rctrl ralt  rmet _
+   _    S-6  S-1    S-;  eql  S-7  •    S-3  grv   min   S-eql S-2  _    _
+   _    S-8  [    S-[  S-9  ;    •    S-4  rsft  rctrl ralt  rmet _
    _    S-5  ]    S-]  S-0  S-\  •     •   S-grv S-min \      _
    _    _    _              _              _    _
 )
