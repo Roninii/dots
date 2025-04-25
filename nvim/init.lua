@@ -401,7 +401,6 @@ require('lazy').setup({
           },
         },
         gofumpt = {},
-        golines = {},
         goimports = {},
       }
 
@@ -457,7 +456,6 @@ require('lazy').setup({
         go = {
           'goimports',
           'gofumpt',
-          'golines',
         },
         javascript = {
           stop_after_first = true,
