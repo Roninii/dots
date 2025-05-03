@@ -1,17 +1,54 @@
 [
+  // ===== GLOBAL WORKSPACE SETTINGS =====
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-w f": "zed::ToggleFullScreen"
+    }
+  },
+
+  // ===== GLOBAL NAVIGATION AND PANELS =====
+  {
+    "context": "(VimControl && !menu ) || (EmptyPane || SharedScreen) || ProjectPanel",
+    "bindings": {
+      "space f": "file_finder::Toggle",
+      "space space": "tab_switcher::Toggle",
+      "space b": "workspace::ToggleLeftDock",
+      "space z": "workspace::ToggleCenteredLayout",
+      "space t": "workspace::NewCenterTerminal"
+    }
+  },
+
+  // ===== VIM MODE NAVIGATION =====
   {
     "context": "VimControl && !menu && vim_mode != operator",
     "bindings": {
+      // Subword navigation
       "w": "vim::NextSubwordStart",
       "b": "vim::PreviousSubwordStart",
       "e": "vim::NextSubwordEnd",
       "g e": "vim::PreviousSubwordEnd",
-      "space z": "workspace::ToggleCenteredLayout",
-      "space s f": "file_finder::Toggle",
-      "space space": "tab_switcher::Toggle",
-      "-": "workspace::ToggleLeftDock"
+
+      // Project navigation
+      "-": "pane::RevealInProjectPanel",
+
+      // Window navigation
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneUp",
+      "ctrl-k": "workspace::ActivatePaneDown"
     }
   },
+
+  // ===== VIM VISUAL MODE =====
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-x": "vim::Exchange"
+    }
+  },
+
+  // ===== VIM NORMAL/VISUAL MODES =====
   {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
@@ -19,12 +56,16 @@
       "shift-s": "vim::PushSneakBackward"
     }
   },
+
+  // ===== COMPLETION HANDLING =====
   {
     "context": "Editor && vim_mode == insert &&showing_completions",
     "bindings": {
       "ctrl-y": "editor::ConfirmCompletion"
     }
   },
+
+  // ===== FILE FINDER PANE SPLITTING =====
   {
     "context": "(FileFinder && !menu_open)",
     "bindings": {
@@ -34,10 +75,12 @@
       "ctrl-v": "pane::SplitRight"
     }
   },
+
+  // ===== AI PREDICTION HANDLING =====
+  // Always use alt-l to accept predictions.
   {
     "context": "Editor && edit_prediction",
     "bindings": {
-      "tab": "editor::AcceptEditPrediction",
       "alt-tab": null,
       "alt-l": "editor::AcceptEditPrediction"
     }
@@ -47,6 +90,51 @@
     "bindings": {
       "alt-tab": null,
       "alt-l": "editor::AcceptEditPrediction"
+    }
+  },
+  // Reset tab to it's normal behavior
+  {
+    "context": "Editor",
+    "bindings": {
+      "tab": "editor::Tab"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "tab": "editor::ComposeCompletion"
+    }
+  },
+  {
+    "context": "(VimControl && !menu) || vim_mode == replace || vim_mode == waiting",
+    "bindings": {
+      "tab": "vim::Tab"
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "bindings": {
+      "tab": ["vim::Literal", ["tab", "\u0009"]]
+    }
+  },
+
+  // ===== VIM OPERATOR CONTEXTS =====
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      "Q": "vim::MiniQuotes",
+      "B": "vim::MiniBrackets"
+    }
+  },
+
+  // ===== NON-VIM PANE NAVIGATION =====
+  {
+    "context": "Dock || Editor && !VimControl",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp"
     }
   }
 ]
