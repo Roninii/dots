@@ -129,12 +129,20 @@
 
   // ===== NON-VIM PANE NAVIGATION =====
   {
-    "context": "Dock || Editor && !VimControl",
+    "context": "Dock || (Editor && !VimControl)",
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "Terminal && vi_mode",
+    "bindings": {
+      // allows vim tab navigation when using centered terminal in vi mode
+      "g t": "pane::ActivateNextItem",
+      "g T": "pane::ActivatePreviousItem"
     }
   }
 ]
