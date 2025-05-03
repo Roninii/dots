@@ -82,6 +82,8 @@
       "write": {
         "name": "Write",
         "tools": {
+          "contents": true,
+          "code_actions": true,
           "open": true,
           "terminal": true,
           "batch_tool": true,
