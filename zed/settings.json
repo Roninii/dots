@@ -64,24 +64,27 @@
       "enabled": true
     }
   },
+  // Use Zed's built-in UI for modals instead of the MacOS options that are not keyboard friendly.
+  "use_system_prompts": false,
 
   // Assistant Settings
-  "assistant": {
+  "agent": {
     "always_allow_tool_actions": true,
     "default_open_ai_model": "gpt-4o",
     "default_profile": "write",
     "inline_assistant_model": {
-      "provider": "zed.dev",
+      "provider": "copilot_chat",
       "model": "claude-3-5-sonnet"
     },
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-thinking-latest"
     },
     "profiles": {
       "write": {
         "name": "Write",
         "tools": {
+          "web_search": true,
           "contents": true,
           "code_actions": true,
           "open": true,
