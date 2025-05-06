@@ -3,7 +3,11 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-w f": "zed::ToggleFullScreen"
+      "ctrl-w f": "zed::ToggleFullScreen",
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "LazyGit", "reveal_target": "center" }
+      ]
     }
   },
 
@@ -19,7 +23,6 @@
       "space p": "diagnostics::Deploy",
       "space o": "outline::Toggle",
       "space g o": "outline_panel::ToggleFocus",
-      "space g g": "git_panel::ToggleFocus",
       "space t": "workspace::NewCenterTerminal"
     }
   },
