@@ -14,7 +14,12 @@
       "space f": "file_finder::Toggle",
       "space space": "tab_switcher::Toggle",
       "space b": "workspace::ToggleLeftDock",
+      "space a": "workspace::ToggleRightDock",
       "space z": "workspace::ToggleCenteredLayout",
+      "space p": "diagnostics::Deploy",
+      "space o": "outline::Toggle",
+      "space g o": "outline_panel::ToggleFocus",
+      "space g g": "git_panel::ToggleFocus",
       "space t": "workspace::NewCenterTerminal"
     }
   },
@@ -143,6 +148,14 @@
       // allows vim tab navigation when using centered terminal in vi mode
       "g t": "pane::ActivateNextItem",
       "g T": "pane::ActivatePreviousItem"
+    }
+  },
+
+  // ===== Git Panel =====
+  {
+    "context": "GitPanel || GitCommit",
+    "bindings": {
+      "alt-l": "git::GenerateCommitMessage"
     }
   }
 ]
