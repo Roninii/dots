@@ -30,10 +30,6 @@
       }
     }
   },
-  "title_bar": {
-    "show_user_picture": false,
-    "show_branch_icon": true
-  },
 
   // VIM Settings
   "vim_mode": true,
@@ -60,6 +56,9 @@
       "settings": {}
     }
   },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "diagnostics": {
     "inline": {
       "enabled": true
@@ -69,8 +68,8 @@
   "use_system_prompts": false,
 
   // Assistant Settings
-  "agent": {
-    "always_allow_tool_actions": false,
+  "assistant": {
+    "always_allow_tool_actions": true,
     "default_open_ai_model": "gpt-4o",
     "default_profile": "write",
     "inline_assistant_model": {
@@ -114,9 +113,6 @@
     },
     "version": "2"
   },
-  // "features": {
-  //   "edit_prediction_provider": "copilot"
-  // },
 
   // Misc
   "git": {

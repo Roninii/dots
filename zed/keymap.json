@@ -23,7 +23,8 @@
         "task::Spawn",
         { "task_name": "LazyGit", "reveal_target": "center" }
       ],
-      "space t": "workspace::NewCenterTerminal"
+      "space t": "workspace::NewCenterTerminal",
+      "space j a": "pane::JoinAll"
     }
   },
 
