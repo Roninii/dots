@@ -16,6 +16,8 @@ alias zfc="v ~/.zshrc"
 alias lg="lazygit"
 alias kbr='sudo "/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"'
 alias kan='sudo .config/kanata/kanata --cfg .config/kanata/ronini.kbd'
+alias claude="/Users/ronini/.claude/local/claude"
 
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 export PATH=$PATH:$(go env GOPATH)/bin
+
