@@ -6,7 +6,7 @@ return {
   },
   opts = {
     strategies = {
-      chat = { adapter = 'copilot' },
+      chat = { adapter = 'anthropic' },
       inline = {
         adapter = 'copilot',
       },
@@ -14,7 +14,7 @@ return {
     display = {
       chat = {
         intro_message = 'Welcome back, Ronini! (press ? for options)',
-        show_settings = true, -- show LLM settings at the top of the chat buffer
+        show_settings = false, -- show LLM settings at the top of the chat buffer
         show_token_count = false,
       },
       window = {
@@ -27,6 +27,13 @@ return {
       },
     },
     adapters = {
+      anthropic = function()
+        return require('codecompanion.adapters').extend('anthropic', {
+          env = {
+            api_key = 'cmd:op read "op://Personal/GN_CC_Key/credential" --no-newline',
+          },
+        })
+      end,
       copilot = function()
         return require('codecompanion.adapters').extend('copilot', {
           schema = {
