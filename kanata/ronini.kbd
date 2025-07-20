@@ -8,7 +8,7 @@
   espc (tap-hold 200 200 spc @ext)
 
   ;; layer-switch changes the base layer.
-  can (layer-switch canary)
+  cdh (layer-switch colemakdh)
   qwr (layer-switch qwerty)
 
   ;; Clipboard Shortcuts
@@ -25,14 +25,14 @@
 )
 
 (defalias
-    c (tap-hold $tap-time $hold-time c lmet)
+    a (tap-hold $tap-time $hold-time a lmet)
     r (tap-hold $tap-time $hold-time r lalt)
     s (tap-hold $tap-time $hold-time s lctl)
     t (tap-hold $tap-time $hold-time t lsft)
     n (tap-hold $tap-time $hold-time n rsft)
     e (tap-hold $tap-time $hold-time e rctl)
     i (tap-hold $tap-time $hold-time i ralt)
-    a (tap-hold $tap-time $hold-time a rmet)
+    o (tap-hold $tap-time $hold-time o rmet)
 )
 
 (defsrc
@@ -44,27 +44,27 @@
   lctl lalt lmet           spc            rmet ralt
 )
 
-(deflayer canary
+(deflayer colemakdh
   esc  🔅   🔆    ✗    ✗    ✗    ✗    ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
-  @hesc  @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
-  lsft q    j    v    d    k    •    x    h    /    ,   .
+  tab  q    w    f    p    b    [    j    l    u    y    '    ;    \
+  @hesc  @a   @r   @s   @t   g    ]    m    @n   @e   @i   @o   ret
+  lsft z    x    c    d    v    •    k    h    ,    .   /
   lctl lalt @ext         @espc                 @sym ralt
 )
 
 (deflayer hyper
     esc  🔅   🔆    ✗    ✗    ✗    ✗    ◀◀   ▶⏸   ▶▶   🔇   🔉   🔊
     M-A-C-S-grv  M-A-C-S-1  M-A-C-S-2  M-A-C-S-3  M-A-C-S-4  M-A-C-S-5  M-A-C-S-6  M-A-C-S-7  M-A-C-S-8  M-A-C-S-9  M-A-C-S-0  M-A-C-S-min  M-A-C-S-eql  M-A-C-S-bspc
-    M-A-C-S-tab  M-A-C-S-w  M-A-C-S-l  M-A-C-S-y  M-A-C-S-p  M-A-C-S-b  [    M-A-C-S-z  M-A-C-S-f  M-A-C-S-o  M-A-C-S-u  '    ;    \
-    M-A-C-S-esc  M-A-C-S-c  M-A-C-S-r  M-A-C-S-s  M-A-C-S-t  M-A-C-S-g  ]    M-A-C-S-m  M-A-C-S-n  M-A-C-S-e  M-A-C-S-i  M-A-C-S-a  M-A-C-S-ret
-    lsft M-A-C-S-q  M-A-C-S-j  M-A-C-S-v  M-A-C-S-d  M-A-C-S-k  •    M-A-C-S-x  M-A-C-S-h  /    ,   .
+    M-A-C-S-tab  M-A-C-S-q  M-A-C-S-w  M-A-C-S-f  M-A-C-S-p  M-A-C-S-b  [   M-A-C-S-j  M-A-C-S-l  M-A-C-S-u  M-A-C-S-y  '    ;    \
+    M-A-C-S-esc  M-A-C-S-a  M-A-C-S-r  M-A-C-S-s  M-A-C-S-t  M-A-C-S-g  ]   M-A-C-S-m  M-A-C-S-n  M-A-C-S-e  M-A-C-S-i  M-A-C-S-o  M-A-C-S-ret
+    lsft         M-A-C-S-z  M-A-C-S-x  M-A-C-S-c  M-A-C-S-d  M-A-C-S-v  •   M-A-C-S-x  M-A-C-S-h  ,          .          /
     lctl lalt @ext           spc                 @sym ralt
 )
 
 (deflayer extend
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @qwr @can lrld _    _    _    _    _    _    _    _    _    _
+  _    @qwr @cdh lrld _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _   ‹⌘  ‹⌥   ‹⎈  ‹⇧   _    _    _    ◀    ▼    ▲    ▶    _
   _    @und @cut @cpy @pst _    _    _    ⌫    _    _    _
