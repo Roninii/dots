@@ -6,6 +6,7 @@
   hesc (tap-hold 200 150 esc @hyper)
   grl (tap-hold 200 200 grv @ext)
   espc (tap-hold 200 200 spc @ext)
+  bsym (tap-hold 200 200 bspc @ext)
 
   ;; layer-switch changes the base layer.
   can (layer-switch canary)
@@ -50,7 +51,7 @@
   tab  w    l    y    p    b    [    z    f    o    u    '    ;    \
   @hesc  @c   @r   @s   @t   g    ]    m    @n   @e   @i   @a   ret
   lsft q    j    v    d    k    •    x    h    /    ,   .
-  lctl lalt @ext         @espc                 @sym ralt
+  lctl lalt @ext         @espc                 @bsym ralt
 )
 
 (deflayer hyper
