@@ -6,7 +6,7 @@
   hesc (tap-hold 200 150 esc @hyper)
   grl (tap-hold 200 200 grv @ext)
   espc (tap-hold 200 200 spc @ext)
-  bsym (tap-hold 200 200 bspc @ext)
+  bsym (tap-hold 200 200 bspc @sym)
 
   ;; layer-switch changes the base layer.
   can (layer-switch canary)
@@ -75,11 +75,11 @@
 
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-   _    S-6  S-1    S-;  eql  S-7  •    S-3  grv   min   S-eql S-2  _    _
-   _    S-8  [    S-[  S-9  ;    •    S-4  rsft  rctrl ralt  rmet _
-   _    S-5  ]    S-]  S-0  S-\  •     •   S-grv S-min \      _
-   _    _    _              _              _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    S-5  S-1  S-;  eql  S-7  •    S-3  grv  min  S-eql S-2  _    _
+  _    S-8  [    S-[  S-9  ;    •    S-4  rsft rctrl ralt  rmet _
+  _    S-6  ]    S-]  S-0  S-\  •    •    S-grv S-min \     _
+  _    _    _              _              _    _
 )
 
 ;; This layer is just a default QWERTY layer so that if the wife or kids need to use
