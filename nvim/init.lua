@@ -595,18 +595,6 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  -- Markdown preview. Must be loaded before treesitter
-  {
-    'OXY2DEV/markview.nvim',
-    lazy = false,
-    opts = {
-      preview = {
-        filetypes = { 'markdown', 'codecompanion' },
-        ignore_buftypes = {},
-      },
-    },
-  },
-
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
