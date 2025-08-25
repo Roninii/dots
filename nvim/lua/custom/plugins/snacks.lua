@@ -4,18 +4,10 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      zen = { enabled = true },
       lazygit = { enabled = true },
       gitbrowse = { enabled = true },
     },
     keys = {
-      {
-        '<leader>z',
-        function()
-          Snacks.zen()
-        end,
-        desc = '[Z]en Mode',
-      },
       {
         '<leader>gg',
         function()
