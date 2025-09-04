@@ -1,4 +1,4 @@
-background-opacity = 0.8
+background-opacity = 0.9
 background-blur = true
 font-family = MonoLisaCustom Nerd Font
 font-size = 15
@@ -6,3 +6,4 @@ cursor-click-to-move = true
 cursor-style = block
 shell-integration-features = no-cursor
 window-padding-x = 8
+keybind = shift+enter=text:\n
