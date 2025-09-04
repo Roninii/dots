@@ -1,7 +1,3 @@
--- TODO: Remove this.
--- It's a temporary workaround for the broken :Inspect command
-vim.hl = vim.highlight
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -497,9 +493,8 @@ require('lazy').setup({
           'prettier',
         },
         vue = {
-          stop_after_first = true,
+          stop_after_first = false,
           'eslint_d',
-          'prettierd',
           'prettier',
         },
       },
