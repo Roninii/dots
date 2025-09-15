@@ -488,13 +488,11 @@ require('lazy').setup({
         terraform = { 'terraform_fmt' },
         typescript = {
           stop_after_first = true,
-          'eslint_d',
           'prettierd',
           'prettier',
         },
         vue = {
           stop_after_first = false,
-          'eslint_d',
           'prettier',
         },
       },
