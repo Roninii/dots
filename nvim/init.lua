@@ -449,7 +449,7 @@ require('lazy').setup({
         if server_name == 'vue_ls' then
           -- Setup vtsls for Vue files
           require('lspconfig').vtsls.setup(vtsls_config)
-          require('lspconfig').volar.setup(config) -- TODO: Volar was renamed to vue_ls in Mason, but not in lspconfig yet
+          require('lspconfig').vue_ls.setup(config)
           goto continue
         end
 
