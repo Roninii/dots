@@ -402,6 +402,7 @@ require('lazy').setup({
             },
           },
         },
+        basedpyright = {},
       }
 
       -- Ensure the servers and tools above are installed

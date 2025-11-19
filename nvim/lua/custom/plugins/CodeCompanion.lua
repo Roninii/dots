@@ -7,15 +7,17 @@ return {
   },
   opts = {
     strategies = {
-      chat = { adapter = 'claude_code' },
-      inline = {
+      chat = {
         adapter = 'claude_code',
+      },
+      inline = {
+        adapter = 'copilot',
       },
     },
     display = {
       chat = {
         intro_message = 'Welcome back, Ronini! (press ? for options)',
-        show_settings = true, -- show LLM settings at the top of the chat buffer
+        show_settings = false, -- I don't think this works with Claude Code
         show_token_count = false,
       },
       window = {
@@ -28,6 +30,17 @@ return {
       },
     },
     adapters = {
+      http = {
+        copilot = function()
+          return require('codecompanion.adapters').extend('copilot', {
+            -- schema = {
+            --   model = {
+            --     -- default = 'claude',
+            --   },
+            -- },
+          })
+        end,
+      },
       acp = {
         claude_code = function()
           return require('codecompanion.adapters').extend('claude_code', {
