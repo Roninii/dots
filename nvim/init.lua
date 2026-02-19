@@ -440,16 +440,24 @@ require('lazy').setup({
         -- },
       }
 
-      -- Set global capabilities for all servers
-      vim.lsp.config('*', { capabilities = capabilities })
-
-      -- Configure each server with custom settings
+      -- Set up each server manually after mason-lspconfig
       for server_name, server_config in pairs(servers) do
-        vim.lsp.config(server_name, server_config)
-      end
+        local config = vim.tbl_deep_extend('force', {
+          capabilities = capabilities,
+        }, server_config)
 
-      -- Enable all configured servers
-      vim.lsp.enable(vim.tbl_keys(servers))
+        -- Special handling for vue_ls to ensure vtsls also starts
+        if server_name == 'vue_ls' then
+          -- Setup vtsls for Vue files
+          require('lspconfig').vtsls.setup(vtsls_config)
+          require('lspconfig').vue_ls.setup(config)
+          goto continue
+        end
+
+        require('lspconfig')[server_name].setup(config)
+
+        ::continue::
+      end
     end,
   },
 
