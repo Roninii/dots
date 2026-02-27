@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="spaceship"
+ZSH_THEME=""
 zstyle ':omz:update' mode auto      # update automatically without asking
 zstyle ':omz:update' frequency 13   # update every 13 days
 
@@ -60,3 +60,5 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # OpenClaw Completion
 source "/Users/ronini/.openclaw/completions/openclaw.zsh"
+
+eval "$(starship init zsh)"
